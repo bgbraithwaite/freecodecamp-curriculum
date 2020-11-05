@@ -10,6 +10,8 @@ This repository only hosts a "no tests", Codepen-independent version of each pro
 
 ## [Build a Survey Form](https://www.freecodecamp.org/learn/responsive-web-design/responsive-web-design-projects/build-a-survey-form)
 
+[Codepen solution](https://codepen.io/bgbraithwaite/pen/vzPrRY).
+
 ## [Build a Project Landing Page](https://www.freecodecamp.org/learn/responsive-web-design/responsive-web-design-projects/build-a-product-landing-page)
 
 ## [Build a Technical Documentation Page](https://www.freecodecamp.org/learn/responsive-web-design/responsive-web-design-projects/build-a-technical-documentation-page)

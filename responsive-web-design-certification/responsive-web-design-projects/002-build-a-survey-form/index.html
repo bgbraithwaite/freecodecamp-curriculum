@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" type="text/css">
+</head>
+
+<body>
+  <div id="main">
+    <div id="titlebar">
+      <span id="titlebar-edge-left"></span>
+      <h1 id="title">Retrocomputing Survey</h1>
+      <span id="titlebar-edge-right"></span>
+    </div>
+    <article>
+      <p id="description">Which retrocomputer models, operating systems, and applications were (and are) truly the best of the best? Let the voting begin!</p>
+
+      <form id="survey-form" action="">
+        <label id="name-label">Username
+          <input autofocus type="text" id="name" placeholder="Required" required>
+        </label>
+        <label id="email-label">E-mail
+          <input type="email" id="email" placeholder="Required" required>
+        </label>
+        <label id="number-label">Lucky Number (13-122)
+          <input type="number" min="13" max="122" id="number" placeholder="42">
+        </label>
+        <label>Best Computer
+          <select id="dropdown">
+            <option>Commodore 64</option>
+            <option>Mac 512k</option>
+            <option>Atari 400</option>
+            <option>Sinclair ZX Spectrum</option>
+          </select>
+        </label>
+        <label>Best Classic Operating Systems
+          <input type="radio" name="os" value="winnineeight">Windows 98 SE</input>
+          <input type="radio" name="os" value="syssix">System 6</input>
+          <input type="radio" name="os" value="geos">GEOS</input>
+          <input type="radio" name="os" value="sixtwotwo">MS-DOS 6.22</input>
+        </label>
+        <label>Best Applications
+          <input type="checkbox" value="wordstar">WordStar</input>
+          <input type="checkbox" value="wordfiveone">Word 5.1</input>
+          <input type="checkbox" value="llama">Winamp</input>
+          <input type="checkbox" value="romero">Doom</input>
+        </label>    
+        <label>Speak Your Mind
+          <textarea cols="40" rows="1"></textarea>
+        </label>
+
+        <button id="submit">SUBMIT</button>
+
+      </form>
+  </div>
+  </article>
+</body>
+
+</html>
