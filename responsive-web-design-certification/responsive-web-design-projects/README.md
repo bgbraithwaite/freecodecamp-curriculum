@@ -14,6 +14,8 @@ This repository only hosts a "no tests", Codepen-independent version of each pro
 
 ## [Build a Project Landing Page](https://www.freecodecamp.org/learn/responsive-web-design/responsive-web-design-projects/build-a-product-landing-page)
 
+[Codepen solution](https://codepen.io/bgbraithwaite/pen/pQrzNx).
+
 ## [Build a Technical Documentation Page](https://www.freecodecamp.org/learn/responsive-web-design/responsive-web-design-projects/build-a-technical-documentation-page)
 
 ## [Build a Personal Portfolio Webpage](https://www.freecodecamp.org/learn/responsive-web-design/responsive-web-design-projects/build-a-personal-portfolio-webpage)
