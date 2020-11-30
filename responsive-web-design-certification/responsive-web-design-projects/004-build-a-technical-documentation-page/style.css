@@ -1,0 +1,129 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --bluu: hsl(220, 80%, 20%);
+  --yllw: hsl(50,  80%, 85%);
+  --shadow: .5rem .5rem var(--bluu);
+  --border: .1rem solid var(--bluu);
+}
+
+body {
+  background-color: var(--yllw);
+}
+
+nav {
+  position: fixed;
+  top: 1rem;
+  bottom: 0;
+  width: 20rem;
+  overflow: auto;
+  margin: 0 1rem 1rem 1rem;
+  padding: 1rem;
+  background-color: white;
+  box-shadow: var(--shadow);
+  border: var(--border);
+  border-radius: .5em;
+  line-height: 1.5;
+}
+
+nav ul {
+  padding: 1rem 0 0 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+nav ul li {
+  display: inline;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+header {
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+h2 {
+  margin-top: 0; /* fix the gap */
+}
+
+main {
+  margin-left: 21rem;
+}
+
+.intro {
+  margin-top: 1rem;
+}
+
+section {
+  margin: 0 1rem 1rem 1rem;
+  padding: 1rem;
+  background-color: white;
+  box-shadow: var(--shadow);
+  border: var(--border);
+  border-radius: .5em;
+  line-height: 1.5;
+  max-width: 80rem;
+}
+
+img {
+  display: block;
+  overflow: hidden;
+}
+
+code, .required, .notvalid, nav ul li {
+  background-color: var(--yllw);
+  border-radius: 1rem;
+  border: var(--border);
+  margin-right: .1rem;
+  padding: 0 .5rem;
+  /* responsive-ish: wrap newline but preserve whitespace */
+  white-space: pre-wrap;
+  /* and allow linebreak within words to avoid overflow */
+  word-break: break-word;
+}
+
+.required, .notvalid, nav ul li {
+  background: var(--bluu);
+  color: white;
+}
+
+pre code {
+  border: none;
+}
+
+pre {
+  background-color: var(--yllw);
+  box-shadow: var(--shadow);
+  border-radius: .25em;
+  padding: 0 .5rem;
+  white-space: pre-wrap;
+  max-width: 60rem;
+}
+
+.definition {
+  border-bottom: 0.1em dashed;
+}
+
+@media only screen and (max-width: 750px) {
+/* I am SO MAD that I couldn't get this to work without !important, then I remembered that CSS inheritance works TOP TO BOTTOM in the same CSS file, but I had put the @media query first *palms face REAL hard* */
+  body {
+    padding-top: 1rem;
+  }
+  
+  nav {
+    position: static;
+    width: auto;
+  }
+  
+  main {
+    position: static;
+    margin-left: 0;
+  }
+}

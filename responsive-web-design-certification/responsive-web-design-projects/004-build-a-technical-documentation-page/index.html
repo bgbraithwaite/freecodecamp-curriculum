@@ -1,0 +1,186 @@
+<!DOCTYPE html lang="en">
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css" type="text/css">
+  <link rel="stylesheet" href="style.css" type="text/css">
+  <title>Responsive Web Design Projects - Build a Technical Documentation Page</title>
+</head>
+<body>
+  <nav id="navbar">
+    <header>The &lt;img&gt; Tag</header>
+    <ul>
+      <li><a class="nav-link" href="#align">align</a></li>
+      <li><a class="nav-link" href="#alt">alt</a></li>
+      <li><a class="nav-link" href="#border">border</a></li>
+      <li><a class="nav-link" href="#crossorigin">crossorigin</a></li>
+      <li><a class="nav-link" href="#height">height</a></li>
+      <li><a class="nav-link" href="#hspace">hspace</a></li>
+      <li><a class="nav-link" href="#ismap">ismap</a></li>
+      <li><a class="nav-link" href="#longdesc">longdesc</a></li>
+      <li><a class="nav-link" href="#sizes">sizes</a></li>
+      <li><a class="nav-link" href="#src">src</a></li>
+      <li><a class="nav-link" href="#srcset">srcset</a></li>
+      <li><a class="nav-link" href="#usemap">usemap</a></li>
+      <li><a class="nav-link" href="#vspace">vspace</a></li>
+      <li><a class="nav-link" href="#width">width</a></li>
+    </ul>
+  </nav>
+  <main id="main-doc">
+    <section class="intro">
+      <h2>Making a valid &lt;img&gt; tag</h2>
+      <figure>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b6/New_Map_of_Great_Britain_and_Ireland_%281806%29.jpg" alt="Closeup on New Map of Great Britain (1806)">
+        <figcaption>The most basic valid &lt;img&gt; tag in HTML 5 (no alt attribute was needed in HTML 4.01)</figcaption>
+      </figure>
+      <p><code>&lt;img src="https://upload.wikimedia.org/wikipedia/commons/b/b6/New_Map_of_Great_Britain_and_Ireland_%281806%29.jpg" alt="Closeup on New Map of Great Britain (1806)"&gt;</code></p>
+    </section>
+    <section class="main-section" id="align">
+      <header>align</header>
+
+      <p><strong class="notvalid">Not valid in HTML 5.</strong> Use CSS <code>vertical-align</code> or <code>float</code> instead. In HTML 4.01, this attribute would align an image vertically or horizontally.</p>
+      <ul>
+        <li>Use the CSS property <code>vertical-align: top;</code> instead of <code>align="top"</code></li>
+        <li>Use the CSS property <code>vertical-align: middle;</code> instead of <code>align="middle"</code></li>
+        <li>Use the CSS property <code>vertical-align: bottom;</code> instead of <code>align="bottom"</code></li>
+        <li>Use the CSS property <code>float: left;</code> instead of <code>align="left"</code></li>
+        <li>Use the CSS property <code>float: right;</code> instead of <code>align="right"</code></li>
+      </ul>
+    </section>
+    <section class="main-section" id="alt">
+      <header>alt</header>
+      <figure>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b6/New_Map_of_Great_Britain_and_Ireland_%281806%29.pg" alt="Closeup on New Map of Great Britain (1806)">
+        <figcaption>Oops! This image is broken, but you can read a description of its intended content.</figcaption>
+      </figure>
+      <p><strong class="required">Required in HTML 5.</strong> Shows alternate text in case the image cannot be displayed.</p>
+      <p>Alternate text for the <code>alt</code> tag is not the same thing as a tooltip; use the <code>title</code> attribute (which can be used on any HTML element) to display a tooltip.</p>
+      <figure>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b6/New_Map_of_Great_Britain_and_Ireland_%281806%29.pg" alt="Closeup on New Map of Great Britain (1806)" title="Closeup on New Map of Great Britain (1806)">
+        <figcaption>This image has <code>alt</code> text, but it also displays a tooltip because of the <code>title</code> text.</figcaption>
+      </figure>
+    </section>
+    <section class="main-section" id="border">
+
+      <header>border</header>
+      <p><strong class="notvalid">Not valid in HTML 5.</strong> Use CSS <code>border</code> instead. In HTML 4.01, this attribute will draw a border around the image of x pixels.</p>
+      <p>Since I set the DOCTYPE of this pen to HTML 5, CodePen will throw an HTML Inspector warning: "The 'border' attribute is no longer valid on the &lt;img&gt; element and should not be used." and the browser will not display any border.</p>
+
+    </section>
+    <section class="main-section" id="crossorigin">
+
+      <header>crossorigin</header>
+      <p>I read quite a lot to try to wrap my head around this one. I <em>think</em> that <code>crossorigin</code> is intended to act as a security tool. In a JavaScript app, unless all resources (including images) from different domains have properly set their <code>crossorigin</code>s, the browser should treat its canvas as "tainted" for security purposes. The document itself can display crossorigin resources to the browser canvas and the JavaScript can write to the canvas, but if the JavaScript tries to read data back from a "tainted" canvas, the browser will throw a security error. In effect, this prevents things like a malicious page element from taking a screenshot of every page you browse.</p>
+      <p>I want to explore the whole topic of <span class="definition" title="Cross Origin Resource Sharing">CORS</span>, since it seems it would be very relevant to any nontrivial web app. Insofar as CORS concerns the &lt;img&gt; tag, however, I think it is more of a "when I obviously need it" kind of learning.</p>
+      <p><code>crossorigin</code> can take a value of <code>anonymous</code> or <code>use-credentials</code>.</p>
+    </section>
+
+    <section class="main-section" id="height">
+      <header>height</header>
+      <figure>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b6/New_Map_of_Great_Britain_and_Ireland_%281806%29.jpg" alt="Closeup on New Map of Great Britain (1806)" height="100">
+        <figcaption>This example shrinks the image to 100 pixels high, preserving the image aspect ratio.</figcaption>
+      </figure>
+
+      <figure>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b6/New_Map_of_Great_Britain_and_Ireland_%281806%29.jpg" alt="Closeup on New Map of Great Britain (1806)" height="220">
+        <figcaption>This example enlarges the image to 220 pixels high, preserving the aspect ratio.</figcaption>
+      </figure>
+      <p>Neither example set the image width, so the browser automatically keeps the original image aspect ratio. It is possible to distort an image by setting both <code>height</code> and <code>width</code> attributes:</p>
+      <figure>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b6/New_Map_of_Great_Britain_and_Ireland_%281806%29.jpg" alt="Closeup on New Map of Great Britain (1806)" height="100" width="220">
+        <figcaption>This example distorts the image to 100 pixels high by 220 pixels wide.</figcaption>
+      </figure>
+      <p>Ideally every &lt;img&gt; tag has both <code>height</code> and <code>width</code> set so the browser renders the canvas with the proper dimensions set for the image. This prevents the webpage from redrawing its layout as each image loads, causing the page elements to jump around.</p>
+    </section>
+    <section class="main-section" id="hspace">
+      <header>hspace</header>
+      <figure>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b6/New_Map_of_Great_Britain_and_Ireland_%281806%29.jpg" alt="Closeup on New Map of Great Britain (1806)" hspace="50">
+        <figcaption>This shouldn't work, but Chrome still allows it in 2019.</figcaption>
+      </figure>
+      <p><strong class="notvalid">Not valid in HTML 5.</strong> Can work in modern browsers, but use CSS <code>margin</code> instead. In HTML 4.01, this attribute will add a whitespace of x pixels to the left and right side of the image.</p>
+      <p>Since I set the DOCTYPE of this pen to HTML 5, CodePen will throw an HTML Inspector warning: "The 'hspace' attribute is no longer valid on the &lt;img&gt; element and should not be used," but the browser displays appropriate whitespace anyway (Chrome 71).</p>
+    </section>
+    <section class="main-section" id="ismap">
+      <header>ismap</header>
+      <p>This tag is a boolean value: if it is present, the image is a server-side image map. When the image is wrapped in an appropriate &lt;a&gt; tag, the browser sends the clicked coordinates to the server linked in the &lt;a&gt; tag as a URL query
+        string. For example, the following code:</p>
+      <!-- kinda mangled to display correctly for CodePen -->
+      <pre><code>&lt;a href="mysite.example/example.php"&gt;
+  &lt;img src="mysite.example/image.jpg" alt="This is not an image" ismap&gt;
+&lt;/a&gt;</code></pre>
+      <p>If you clicked on coordinates, say, 100 by 100, the browser will treat it like a link to <code>http://mysite.example/example.php?100,100</code>, and the server will process that URL query accordingly.</p>
+      <p>I'm not sure this is actually used much at all on the modern web.</p>
+    </section>
+    <section class="main-section" id="longdesc">
+      <header>longdesc</header>
+      <p>This tag takes a URL as its value. It was intended as an accessiblity enhancement that can link to an extended description of an image, particularly useful for screen readers. However, it is not currently supported by any major browser vendors, and most sources recommended <code>aria-describedby</code> as the replacement for <code>longdesc</code>.</p>
+    </section>
+    <section class="main-section" id="sizes">
+      <header>sizes</header>
+      <p><code>sizes</code>, together with <code>srcset</code>, is immensely useful for creating responsive websites. You can create custom rules to specify a different image for mobile, desktop, device orientation, HiDPI, etc. <code>sizes</code> takes media conditions as arguments (similar to <code>@media</code> queries). Media conditions can even be combined using <code>and</code>, <code>not</code>, and <code>or</code>. However, you must specify each image's width value in <code>srcset</code> to use <code>sizes</code> and its custom media conditions.</p>
+      <p>This simple example code would make an image take up 100% of the browser viewport if held in portrait mode, or 80% if held in landscape mode. The browser will automatically choose an appropriately-sized image based on its calculations of the actual viewport size, or if it is a browser which does not support <code>sizes</code> and <code>srcset</code>, it will fall back to using the default specified by <code>src</code>:</p>
+      <p><code><pre>&lt;img src="mysite.example/image-default.jpg"
+  alt="This is not an image"
+  srcset="image-small.jpg 240w, image-medium.jpg 960w, image-large.jpg 1920w"
+  sizes="(orientation: landscape) 80vw,
+         100vw;&gt;</pre></code></p>
+      <p>That example is pretty simple &emdash; so simple it would be better to not use those custom attributes at all, and instead use CSS. When an image would need to be materially different, not just scaled up and down, <code>sizes</code> becomes very useful.</p>
+      <p>For example, an author's portrait in an article can focus on her face on a small mobile screen, stretch to include the background when holding a mobile in landcape, then pull out to a full body shot in tablet or desktop:</p>
+      <p><code><pre>&lt;img src="author-default.jpg" alt="Edna Hollis, author of All Our Dreams"
+  srcset="author-mobile.jpg 500w, author-mobile-wide.jpg 1000w, author-huge.jpg 3840w"
+  sizes="(max-width: 480px) and (orientation: portrait) 80vw;
+         (orientation: landscape) 100vw"</pre></code></p>
+    </section>
+    <section class="main-section" id="src">
+      <header>src</header>
+      <p><strong>Required in HTML 5.</strong> Specifies an image's URL.</p>
+    </section>
+    <section class="main-section" id="srcset">
+      <header>srcset</header>
+      <p><code>srcset</code> takes two arguments for each image: the image URL and either its pixel density (1x, 2x, etc.) or width in pixels (e.g., <code>120w</code> for an image 120 pixels wide). The browser will choose an image automatically appropriate for the device or current viewport. <a href="http://caniuse.com/#feat=srcset"><code>srcset</code> is supported by just shy of 90% of browsers</a>, and unsupported browsers will display the default image specified by <code>src</code>.</p>
+      <p>You could use <code>srcset</code> on its own to get a certain amount of responsiveness for free. You can pair it with <code>sizes</code> to direct the browser to display specific image files in response to detailed media conditions (similar syntax to media queries).</p>
+    </section>
+    <section class="main-section" id="usemap">
+      <header>usemap</header>
+      <p>This tag points to the appropriate <code>map</code> tag in the document to give the browser information to build a client-side image map. Roughly, it is custom linked areas inside a particular image, rather than just one link per image or (in the bad old days) cutting what should be a single image into many pieces. Here is an example of a client-side image map:</p>
+      <!-- kinda mangled to display correctly for CodePen -->
+      <pre><code>&lt;img src="mysite.example/image.jpg" alt="This is not an image either" usemap="#1996"&gt;
+&lt;map name="1996"&gt;
+  &lt;area shape="circle" coords="15,15,2" href="heads.html" alt="Heads I Win"&gt;
+  &lt;area shape="rect" coords="40,40,100,80" href="" alt="Tails You Lose"&gt;
+  &lt;area shape="poly" coords="50,40,20,20,11,140,444,290" href="" alt="King Me"&gt;
+&lt;/map&gt;</code></pre>
+      <p>Notice that there is alt text, unlike for <code>ismap</code>, and that there are multiple ways to build shapes, including complex polygons (though I just entered random numbers for this example).</p>
+      <p>Like <code>ismap</code>, I'm not sure this is used much on the modern web either.</p>
+    </section>
+    <section class="main-section" id="vspace">
+      <header>vspace</header>
+      <figure>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b6/New_Map_of_Great_Britain_and_Ireland_%281806%29.jpg" alt="Closeup on New Map of Great Britain (1806)" vspace="50">
+        <figcaption>This shouldn't work, but Chrome still allows it in 2019.</figcaption>
+      </figure>
+      <p><strong class="notvalid">Not valid in HTML 5.</strong> Can work in modern browsers, but use CSS <code>margin</code> instead. In HTML 4.01, this attribute will add a whitespace of x pixels to the top and bottom of the image.</p>
+      <p>Since I set the DOCTYPE of this pen to HTML 5, CodePen will throw an HTML Inspector warning: "The 'vspace' attribute is no longer valid on the &lt;img&gt; element and should not be used," but the browser displays appropriate whitespace anyway (Chrome 71).</p>
+    </section>
+    <section class="main-section" id="width">
+      <header>width</header>
+      <figure>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b6/New_Map_of_Great_Britain_and_Ireland_%281806%29.jpg" alt="Closeup on New Map of Great Britain (1806)" width="100">
+        <figcaption>This example shrinks the image to 100 pixels wide, preserving the image aspect ratio.</figcaption>
+      </figure>
+
+      <figure>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b6/New_Map_of_Great_Britain_and_Ireland_%281806%29.jpg" alt="Closeup on New Map of Great Britain (1806)" width="220">
+        <figcaption>This example enlarges the image to 220 pixels wide, preserving the aspect ratio.</figcaption>
+      </figure>
+      <p>Neither example set the image width, so the browser automatically keeps the original image aspect ratio. It is possible to distort an image by setting both <code>height</code> and <code>width</code> attributes:</p>
+      <figure>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b6/New_Map_of_Great_Britain_and_Ireland_%281806%29.jpg" alt="Closeup on New Map of Great Britain (1806)" height="220" width="100">
+        <figcaption>This example distorts the image to 220 pixels high by 100 pixels wide.</figcaption>
+      </figure>
+      <p>Ideally every &lt;img&gt; tag has both <code>height</code> and <code>width</code> set so the browser renders the canvas with the proper dimensions set for the image. This prevents the webpage from redrawing its layout as each image loads, causing the page elements to jump around.</p>
+    </section>
+  </main>
+</body>
