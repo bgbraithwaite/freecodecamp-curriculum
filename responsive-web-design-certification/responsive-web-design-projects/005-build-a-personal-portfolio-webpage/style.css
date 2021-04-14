@@ -1,18 +1,33 @@
 * {
   box-sizing: border-box;
+/*   border: solid red 1px; */
 }
 
 html {
   --bg: hsl(0, 0%, 85%);
+  --ws: whitesmoke;
   --bg-dark: hsl(0, 0%, 5%);
+  color: var(--bg-dark);
   --accent: hsl(210, 80%, 60%);
-  --shadow: 0 0 .15rem 0 hsla(0, 0%, 0%, 0.3), 0 .1rem .25rem .05rem hsla(0, 0%, 5%, 0.15);
+  --shadow: 0 0 0.15rem hsla(0, 0%, 0%, 0.3),
+    0 0.1rem 0.25rem hsla(0, 0%, 5%, 0.15);
+  --shadow-deep: 0 0.25rem 1rem hsla(210, 20%, 20%, 0.2);
+  --colorful: linear-gradient(315deg, #0cbaba 0%, #380036 74%);
   background-color: var(--bg);
-  font: 18px 'Source Sans Pro', sans-serif;
+  font: 112.5% "Source Sans Pro", sans-serif;
+  scroll-behavior: smooth;
+  /* fixes navbar overlapping anchor */
+  scroll-padding-top: 4em;
+}
+
+h1,
+h2 {
+  margin: 0;
 }
 
 .nav {
   background-color: var(--bg-dark);
+  background-image: var(--colorful);
   box-shadow: var(--shadow);
   position: fixed;
   width: 100%;
@@ -24,10 +39,12 @@ html {
   align-items: center;
   /* culls the big < */
   overflow: hidden;
+  /* fixes blinking cursor overlapping navbar */
+  z-index: 1;
 }
 
 .deco {
-  font: bold 30rem 'Source Code Pro', monospace;
+  font: bold 30rem "Source Code Pro", monospace;
   color: whitesmoke;
   line-height: 4rem;
   margin: 0 0 0 -3rem;
@@ -36,19 +53,6 @@ html {
   z-index: -1;
   top: 0;
   left: 0;
-}
-
-.bgb {
-  font: 200 2rem 'Source Code Pro', monospace;
-  color: var(--bg-dark);
-  margin: 0;
-  padding: 0;
-  position: absolute;
-  /* font-specific - degradation is not awesome but retains rough idea */
-  transform: rotate(-32deg);
-  top: -0.3rem;
-  left: 3.8rem;
-  z-index: -1;
 }
 
 .nav ul {
@@ -61,23 +65,173 @@ html {
 }
 
 .nav-link {
-  font-weight: bold;
+/*   font-weight: bold; */
   text-transform: uppercase;
   text-decoration: none;
   color: whitesmoke;
-  padding: .75em 1.5em .5em 1.5em;
+  padding: 0.75em 1.5em 0.75em 1.5em;
   z-index: 3;
+  transition: all 0.2s;
 }
 
 @media screen and (max-width: 600px) {
   .nav-link {
     margin: 0;
-    padding: .75em .5em .5em .5em;
+    padding: 0.75em 0.5em 0.75em 0.5em;
   }
 }
 
 .nav-link:hover {
   color: var(--bg-dark);
-  background-color: var(--bg);
-  border-bottom: .25em solid var(--accent);
+  background-color: var(--ws);
+/*   border-bottom: 0.25em solid var(--accent); */
+}
+
+.welcome {
+  /*   background-image: linear-gradient(315deg, #0cbaba 0%, #380036 74%); */
+  background-image: url("https://unsplash.com/photos/b18TRXc8UPQ/download?force=true&w=1920");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: var(--shadow);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+#name,
+#title {
+  margin: 0;
+}
+
+@media (min-width: 800px) {
+  #name {
+    font-size: 3em;
+  }
+
+  #title {
+    font-size: 2em;
+  }
+}
+
+.blink {
+  animation: blink 1.5s linear infinite;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  78% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.projects {
+  background-color: whitesmoke;
+}
+
+.projects h1:first-child {
+  font-weight: normal;
+  font-size: 2em;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 0.5em 0;
+}
+
+@media (min-width: 1000px) {
+  .projects-header {
+    padding: 1em 0;
+  }
+}
+
+.grid-container {
+  display: grid;
+/*   make a single column */
+}
+ 
+@media (min-width: 1000px) {
+  .grid-container {
+/*     make a 3-columwn */
+  }
+}
+
+.project-tile {
+  width: 25vw;
+  border: 1px solid var(--bg);
+/*   border-radius: 0.5em; */
+  /* fixes rounded corners of banner image */
+/*   overflow: hidden; */
+  box-shadow: var(--shadow-deep);
+}
+
+.p-banner {
+  height: 40vh;
+  width: 100%;
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+/*   overflow: hidden; */
+}
+
+.p-info {
+  padding: 0.25em 1em 1em 1em;
+}
+
+/* .p-meta {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0;
+}
+
+.p-type {
+  color: var(--ws);
+  background-color: var(--accent);
+  border-radius: 0.25em;
+  padding: 0 0.25em;
+}
+
+.tech {
+  color: var(--accent);
+} */
+
+.p-title {
+/*   font-size: 1.5em; */
+  font-weight: 400;
+  text-transform: uppercase;
+  margin: 0.25em 0 0 0;
+}
+
+.p-desc {
+  margin: 0.25em 0 0.5em 0;
+}
+
+.p-btns {
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  background-color: #380036;
+  border-radius: 0.5em;
+  border: none;
+  color: var(--ws);
+  text-align: center;
+  font-size: 1em;
+  padding: 0.35em 0.5em;
+  transition: all 0.2s;
+  margin: 0 0.25em;
+}
+
+button:hover {
+  background-color: #0cbaba;
 }

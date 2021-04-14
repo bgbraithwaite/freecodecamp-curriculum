@@ -3,47 +3,50 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,400;0,700;0,900;1,200;1,400;1,700;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200;0,400;0,700;0,900;1,200;1,400;1,700;1,900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
   <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body>
   <nav class="nav" id="navbar">
-    <div class="deco">&lt;</div>
-    <div class="bgb">bgb</div>
+<!--     <div class="deco">&lt;</div> -->
     <ul>
       <li><a href="#welcome-section" class="nav-link">About</a></li>
-      <li><a href="#project-1" class="nav-link">Work</a></li>
+      <li><a href="#projects" class="nav-link">Work</a></li>
       <li><a href="#contact" class="nav-link">Contact</a></li>
     </ul>
   </nav>
 
   <section class="welcome" id="welcome-section">
-    <h1>Benjamin Braithwaite<span class="blink">|</span></h1>
-    <p>Web Developer Portfolio</p>
+    <h2 id="name">Benjamin Braithwaite<span class="blink">|</span></h2>
+<!--     <p id="title">&lt; Web Developer Portfolio /&gt;</p> -->
+    <p id="title">Web Developer</p>
   </section>
 
   <section class="projects" id="projects">
+<!--     <h1>&lt; Projects /&gt;</h1> -->
     <h1>Projects</h1>
-    <div class="projects-grid">
-      <div class="project-link">
+    <div class="grid-container">
+      <div class="project-tile">
         <a href="https://codepen.io/bgbraithwaite/full/JjRKGEy" id="project-1">
-        <img class="project-image" alt="Project 1" src="https://github.com/bgbraithwaite/freecodecamp-curriculum/raw/trunk/responsive-web-design-certification/responsive-web-design-projects/005-build-a-personal-portfolio-webpage/images/001.png">
+          <div class="p-banner" style="background-image: url(https://github.com/bgbraithwaite/freecodecamp-curriculum/raw/trunk/responsive-web-design-certification/responsive-web-design-projects/005-build-a-personal-portfolio-webpage/images/001.png)"></div>
         </a>
-      </div>
-      <div class="project-details">
-        <div class="project-title">
-          <p>Portfolio</p>
-          <p><i class="fab fa-html5"></i><i class="fab fa-css3-alt"></i></p>
+        <div class="p-info">
+<!--           <div class="p-meta">
+            <span class="p-date">2019</span>
+            <span class="p-type">Responsive Web Design Project</span>
+            <span class="tech"><i class="fab fa-html5"></i>&thinsp;<i class="fab fa-css3-alt"></i></span>
+          </div> -->
+          <h3 class="p-title">Portfolio</h3>
+          <p class="p-desc">A personal portfolio webpage showcasing my completed projects.</p>
+          <div class="p-btns">
+            <button class="action"><i class="fab fa-github"></i> View on GitHub</button>
+            <button class="action"><i class="fab fa-codepen"></i> View on CodePen</button>
+          </div>
         </div>
-        <p>Description goes here.</p>
-        <div class="buttons">
-          <p class="">View on GitHub</p>
-          <p class="">View on CodePen</p>
-        </div>
       </div>
-      <article class="project-tile" id="project-2">
+      <!--       <article class="project-tile" id="project-2">
         <a href="https://codepen.io/bgbraithwaite/full/YzGwgJe">
           <figure>
             <img alt="Project 2" src="https://github.com/bgbraithwaite/freecodecamp-curriculum/raw/trunk/responsive-web-design-certification/responsive-web-design-projects/005-build-a-personal-portfolio-webpage/images/004-alternate.png">
@@ -82,19 +85,20 @@
             <figcaption>Tribute Page</figcaption>
           </figure>
         </a>
-      </article>
+      </article> -->
     </div>
   </section>
 
   <section id="contact">
     <h1>Contact me</h1>
-    <p><a href="https://codepen.io/bgbraithwaite" class="nav-link" target="_blank">CodePen</a></p>
-    <p><a href="https://www.freecodecamp.org/bgbraithwaite" class="nav-link" id="profile-link" target="_blank">freeCodeCamp</a></p>
-    <p><a href="https://github.com/bgbraithwaite" class="nav-link" target="_blank">GitHub</a></p>
+    <p><a href="https://codepen.io/bgbraithwaite" class="nav-link" target="_blank"><i class="fab fa-codepen"></i> CodePen</a></p>
+    <p><a href="https://www.freecodecamp.org/bgbraithwaite" class="nav-link" id="profile-link" target="_blank"><i class="fab fa-free-code-camp"></i> freeCodeCamp</a></p>
+    <p><a href="https://github.com/bgbraithwaite" class="nav-link" target="_blank"><i class="fab fa-github"></i> GitHub</a></p>
   </section>
-  
+
   <section id="footer">
     <p>made at midnight</p>
+    <p><a href="https://unsplash.com/photos/FXcRNy6aWA4">welcome image from unsplash</a></p>
   </section>
 </body>
 </html>
