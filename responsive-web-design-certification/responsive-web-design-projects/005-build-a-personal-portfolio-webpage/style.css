@@ -16,7 +16,7 @@ html {
   background-color: var(--bg);
   font: 112.5% "Source Sans Pro", sans-serif;
   scroll-behavior: smooth;
-  /* fixes navbar overlapping anchor */
+  /* fixes navbar covering inline links' anchor points */
   scroll-padding-top: 4em;
 }
 
@@ -29,30 +29,15 @@ h2 {
   background-color: var(--bg-dark);
   background-image: var(--colorful);
   box-shadow: var(--shadow);
-  position: fixed;
+  position: sticky;
+  top: 0;
   width: 100%;
   height: 4rem;
-  /* fixes gap but I don't fully understand why it appears in the first place? */
-  top: 0;
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  /* culls the big < */
-  overflow: hidden;
   /* fixes blinking cursor overlapping navbar */
   z-index: 1;
-}
-
-.deco {
-  font: bold 30rem "Source Code Pro", monospace;
-  color: whitesmoke;
-  line-height: 4rem;
-  margin: 0 0 0 -3rem;
-  padding: 0;
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  left: 0;
 }
 
 .nav ul {
@@ -65,12 +50,10 @@ h2 {
 }
 
 .nav-link {
-/*   font-weight: bold; */
   text-transform: uppercase;
   text-decoration: none;
   color: whitesmoke;
   padding: 0.75em 1.5em 0.75em 1.5em;
-  z-index: 3;
   transition: all 0.2s;
 }
 
@@ -84,11 +67,9 @@ h2 {
 .nav-link:hover {
   color: var(--bg-dark);
   background-color: var(--ws);
-/*   border-bottom: 0.25em solid var(--accent); */
 }
 
 .welcome {
-  /*   background-image: linear-gradient(315deg, #0cbaba 0%, #380036 74%); */
   background-image: url("https://unsplash.com/photos/b18TRXc8UPQ/download?force=true&w=1920");
   background-position: center;
   background-repeat: no-repeat;
@@ -96,10 +77,16 @@ h2 {
   box-shadow: var(--shadow);
   height: 100vh;
   display: flex;
+  margin-top: -4em;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
+}
+
+#name {
+  /* hack to trick the eye to see vertically centered text while passing fCC test, otherwise I'd create the same effect by changing .welcome height from `100vh` to `calc(100vh - 4em)` */
+  padding-top: 2em;
 }
 
 #name,
@@ -137,7 +124,7 @@ h2 {
 }
 
 .projects {
-  background-color: whitesmoke;
+  background-color: var(--ws);
 }
 
 .projects h1:first-child {
@@ -168,9 +155,6 @@ h2 {
 .project-tile {
   width: 25vw;
   border: 1px solid var(--bg);
-/*   border-radius: 0.5em; */
-  /* fixes rounded corners of banner image */
-/*   overflow: hidden; */
   box-shadow: var(--shadow-deep);
 }
 
@@ -180,33 +164,14 @@ h2 {
   background-size: cover;
   background-position: top center;
   background-repeat: no-repeat;
-/*   overflow: hidden; */
 }
 
 .p-info {
   padding: 0.25em 1em 1em 1em;
 }
 
-/* .p-meta {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 0;
-}
-
-.p-type {
-  color: var(--ws);
-  background-color: var(--accent);
-  border-radius: 0.25em;
-  padding: 0 0.25em;
-}
-
-.tech {
-  color: var(--accent);
-} */
-
 .p-title {
-/*   font-size: 1.5em; */
-  font-weight: 400;
+  font-weight: normal;
   text-transform: uppercase;
   margin: 0.25em 0 0 0;
 }
