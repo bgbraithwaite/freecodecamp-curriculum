@@ -2,6 +2,8 @@
 
 I forked the original projects for freeCodeCamp certification from the [freeCodeCamp Test Suite Template](https://codepen.io/freeCodeCamp/pen/MJjpwO) on [CodePen](https://codepen.io).
 
+[Responsive Web Design Developer Certification](https://www.freecodecamp.org/certification/bgbraithwaite/responsive-web-design) completed and issued June 24, 2021.
+
 This repository only hosts a "no tests", CodePen-independent version of each project.
 
 ## [Build a Tribute Page](https://www.freecodecamp.org/learn/responsive-web-design/responsive-web-design-projects/build-a-tribute-page)
@@ -23,3 +25,5 @@ This repository only hosts a "no tests", CodePen-independent version of each pro
 [Alternate CodePen solution](https://codepen.io/bgbraithwaite/full/pobqaWM).
 
 ## [Build a Personal Portfolio Webpage](https://www.freecodecamp.org/learn/responsive-web-design/responsive-web-design-projects/build-a-personal-portfolio-webpage)
+
+[CodePen solution](https://codepen.io/bgbraithwaite/full/WNGdWra).

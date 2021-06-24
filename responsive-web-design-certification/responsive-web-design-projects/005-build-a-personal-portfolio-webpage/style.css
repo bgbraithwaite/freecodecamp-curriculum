@@ -1,6 +1,5 @@
 * {
   box-sizing: border-box;
-/*   border: solid red 1px; */
 }
 
 html {
@@ -13,7 +12,7 @@ html {
     0 0.1rem 0.25rem hsla(0, 0%, 5%, 0.15);
   --shadow-deep: 0 0.25rem 1rem hsla(210, 20%, 20%, 0.2);
   --colorful: linear-gradient(315deg, #0cbaba 0%, #380036 74%);
-  background-color: var(--bg);
+  background-color: var(--ws);
   font: 112.5% "Source Sans Pro", sans-serif;
   scroll-behavior: smooth;
   /* fixes navbar covering inline links' anchor points */
@@ -38,6 +37,12 @@ h2 {
   align-items: center;
   /* fixes blinking cursor overlapping navbar */
   z-index: 1;
+}
+
+@media screen and (max-width: 600px) {
+  .nav {
+    justify-content: center;
+  }
 }
 
 .nav ul {
@@ -85,7 +90,7 @@ h2 {
 }
 
 #name {
-  /* hack to trick the eye to see vertically centered text while passing fCC test, otherwise I'd create the same effect by changing .welcome height from `100vh` to `calc(100vh - 4em)` */
+  /* hack to trick the eye to see vertically centered text while passing fCC test; I'd prefer to create the same effect by changing .welcome height from `100vh` to `calc(100vh - 4em)` */
   padding-top: 2em;
 }
 
@@ -94,7 +99,7 @@ h2 {
   margin: 0;
 }
 
-@media (min-width: 800px) {
+@media screen and (min-width: 600px) {
   #name {
     font-size: 3em;
   }
@@ -127,7 +132,8 @@ h2 {
   background-color: var(--ws);
 }
 
-.projects h1:first-child {
+/* common to both */
+.section-heading {
   font-weight: normal;
   font-size: 2em;
   text-transform: uppercase;
@@ -135,52 +141,56 @@ h2 {
   padding: 0.5em 0;
 }
 
-@media (min-width: 1000px) {
-  .projects-header {
-    padding: 1em 0;
-  }
-}
-
 .grid-container {
   display: grid;
-/*   make a single column */
-}
- 
-@media (min-width: 1000px) {
-  .grid-container {
-/*     make a 3-columwn */
-  }
+  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+  justify-content: space-evenly;
+  column-gap: 2rem;
+  row-gap: 2rem;
+  padding: 0 5%;
 }
 
 .project-tile {
-  width: 25vw;
   border: 1px solid var(--bg);
   box-shadow: var(--shadow-deep);
 }
 
-.p-banner {
+@media (max-width: 1000px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+    padding: 0;
+  }
+
+  .project-tile {
+    border-left: none;
+    border-right: none;
+  }
+}
+
+.project-banner {
   height: 40vh;
   width: 100%;
   background-size: cover;
   background-position: top center;
   background-repeat: no-repeat;
+  border-bottom: 1px solid var(--bg);
 }
 
-.p-info {
+.project-info {
   padding: 0.25em 1em 1em 1em;
 }
 
-.p-title {
+.project-title {
   font-weight: normal;
   text-transform: uppercase;
   margin: 0.25em 0 0 0;
 }
 
-.p-desc {
+.project-description {
   margin: 0.25em 0 0.5em 0;
 }
 
-.p-btns {
+.button-container {
   display: flex;
   justify-content: center;
 }
@@ -199,4 +209,48 @@ button {
 
 button:hover {
   background-color: #0cbaba;
+}
+
+.contact {
+  margin-top: 2rem;
+}
+
+@media screen and (max-width: 1000px) {
+  .contact .button-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.contact-button {
+  font-size: 1.5em;
+}
+
+.footer {
+  margin-top: 2rem;
+  padding: 0 2.5em;
+  background: var(--colorful);
+  height: 4rem;
+  color: var(--ws);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 600px) {
+  .footer {
+    padding: 0 1em;
+  }
+
+  .footer p {
+    flex-grow: 1;
+  }
+}
+
+.footer p:nth-child(2) {
+  text-align: right;
+}
+
+.footer a {
+  color: var(--ws);
 }
